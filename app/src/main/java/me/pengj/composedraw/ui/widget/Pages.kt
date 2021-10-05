@@ -12,6 +12,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.calculateCurrentOffsetForPage
+import me.pengj.composedraw.tutorials.CubicDisarrayPage
 import me.pengj.composedraw.tutorials.JoyDivisionPage
 import me.pengj.composedraw.tutorials.TileLinesPage
 import kotlin.math.absoluteValue
@@ -51,6 +52,7 @@ fun Pages(page: PagerState, modifier: Modifier) {
             when(page) {
                 0 -> TileLinesPage()
                 1 -> JoyDivisionPage()
+                2 -> CubicDisarrayPage()
             }
         }
     }
