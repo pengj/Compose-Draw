@@ -27,7 +27,7 @@ fun TriangularMesh() {
 
     fun getGreyColor(): Color {
         val c = Random.nextInt(0, 256)
-        return Color(c, c,c)
+        return Color(c, c, c)
     }
 
     Canvas(modifier = Modifier.padding(CANVAS_PADDING)) {
@@ -65,26 +65,36 @@ fun TriangularMesh() {
         }
 
         odd = true
-        for (y in 0 until (ROWS-1)) {
+        for (y in 0 until (ROWS - 1)) {
             odd = !odd
             val line = mutableListOf<Point>()
             val currentLine = lines[y]
             val nextLine = lines[y + 1]
             for (x in 0 until COLUMNS) {
                 if (odd) {
-                    line.add(currentLine[x]);
-                    line.add(nextLine[x]);
+                    line.add(currentLine[x])
+                    line.add(nextLine[x])
                 } else {
-                    line.add(nextLine[x]);
-                    line.add(currentLine[x]);
+                    line.add(nextLine[x])
+                    line.add(currentLine[x])
                 }
             }
 
             for (i in 0..line.size - 3) {
                 val path = Path()
                 path.moveTo(line[i].x.toFloat(), line[i].y.toFloat())
-                path.lineTo(line[i+1].x.toFloat(), line[i+1].y.toFloat())
-                path.lineTo(line[i+2].x.toFloat(), line[i+2].y.toFloat())
+                path.lineTo(line[i + 1].x.toFloat(), line[i + 1].y.toFloat())
+                drawLine(
+                    color = Color.Black, start = Offset(line[i].x.toFloat(), line[i].y.toFloat()),
+                    end = Offset(line[i + 1].x.toFloat(), line[i + 1].y.toFloat()), strokeWidth = 2f
+                )
+                path.lineTo(line[i + 2].x.toFloat(), line[i + 2].y.toFloat())
+                drawLine(
+                    color = Color.Black,
+                    start = Offset(line[i + 1].x.toFloat(), line[i + 1].y.toFloat()),
+                    end = Offset(line[i + 2].x.toFloat(), line[i + 2].y.toFloat()),
+                    strokeWidth = 2f
+                )
                 drawPath(path = path, color = getGreyColor())
             }
         }
