@@ -17,14 +17,14 @@ import kotlin.math.absoluteValue
 @Composable
 fun Pages(page: PagerState, modifier: Modifier) {
     HorizontalPager(
-        count = 5,
+        count = 6,
         state = page,
         modifier = modifier
-    ) { page ->
+    ) { pageIndex ->
         Surface(
             Modifier
                 .graphicsLayer {
-                    val pageOffset = calculateCurrentOffsetForPage(page).absoluteValue
+                    val pageOffset = calculateCurrentOffsetForPage(pageIndex).absoluteValue
 
                     // We animate the scaleX + scaleY, between 85% and 100%
                     lerp(
@@ -45,12 +45,13 @@ fun Pages(page: PagerState, modifier: Modifier) {
                 }
                 .fillMaxWidth()
         ){
-            when(page) {
+            when(pageIndex) {
                 0 -> TileLinesPage()
                 1 -> JoyDivisionPage()
                 2 -> CubicDisarrayPage()
                 3 -> TriangularMeshPage()
                 4 -> UnDeuxTroisPage()
+                5 -> CirclePackingPage()
             }
         }
     }
