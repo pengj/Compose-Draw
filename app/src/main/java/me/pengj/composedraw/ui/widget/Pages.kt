@@ -1,8 +1,6 @@
 package me.pengj.composedraw
 
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Card
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,10 +10,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.calculateCurrentOffsetForPage
-import me.pengj.composedraw.tutorials.CubicDisarrayPage
-import me.pengj.composedraw.tutorials.JoyDivisionPage
-import me.pengj.composedraw.tutorials.TileLinesPage
-import me.pengj.composedraw.tutorials.TriangularMeshPage
+import me.pengj.composedraw.tutorials.*
 import kotlin.math.absoluteValue
 
 @ExperimentalPagerApi
@@ -55,6 +50,7 @@ fun Pages(page: PagerState, modifier: Modifier) {
                 1 -> JoyDivisionPage()
                 2 -> CubicDisarrayPage()
                 3 -> TriangularMeshPage()
+                4 -> UnDeuxTroisPage()
             }
         }
     }
