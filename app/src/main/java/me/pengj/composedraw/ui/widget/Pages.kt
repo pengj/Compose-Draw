@@ -17,7 +17,7 @@ import kotlin.math.absoluteValue
 @Composable
 fun Pages(page: PagerState, modifier: Modifier) {
     HorizontalPager(
-        count = 6,
+        count = 7,
         state = page,
         modifier = modifier
     ) { pageIndex ->
@@ -52,6 +52,7 @@ fun Pages(page: PagerState, modifier: Modifier) {
                 3 -> TriangularMeshPage()
                 4 -> UnDeuxTroisPage()
                 5 -> CirclePackingPage()
+                6 -> HypnoticSquaresPage()
             }
         }
     }

@@ -79,11 +79,11 @@ private fun hasCollision(
     height: Float
 ): Boolean {
     for (c in circles) {
-        val a = c.radius + circle.radius
+        val d = c.radius + circle.radius
         val x = circle.x - c.x
         val y = circle.y - c.y
 
-        if (a * a >= (x * x + y * y)) {
+        if (d * d >= (x * x + y * y)) {
             return true
         }
     }
