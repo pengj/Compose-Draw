@@ -50,7 +50,7 @@ private fun drawSquare(
     direction: Direction,
     square: Square
 ) {
-    if (step < 0) {
+    if (step == 0) {
         return
     }
 
